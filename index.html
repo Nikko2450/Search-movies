@@ -5,6 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Public+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__desc">
+          <h1 class="header__title">Movie list</h1>
+          <p class="header__subtitle">Total: 120</p>
+        </div>
+
+        <div class="search">
+          <img class="search__img" src="img/search.svg" alt="search" />
+          <input
+            class="search__input"
+            type="text"
+            placeholder="Search Movie..."
+          />
+        </div>
+        <button class="header__button">Search</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr class="table__row">
+            <th class="table__cell">Title</th>
+            <th class="table__cell">Released</th>
+            <th class="table__cell">Country</th>
+            <th class="table__cell">Plot</th>
+            <th class="table__cell">Poster</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="table__row">
+            <td class="table__cell">
+              <p class="table__desc">
+                Harry Potter and the Deathly Hallows: Part 2
+              </p>
+              <p class="table__subtitle">Genre: Adventure, Family, Fantasy</p>
+            </td>
+            <td class="table__cell сenter">
+              <p class="table__desc">15 Jul 2011</p>
+            </td>
+            <td class="table__cell сenter">
+              <p class="table__desc">United Kingdom, United States</p>
+            </td>
+            <td class="table__cell">
+              <p class="table__desc ellipsis">
+                Harry, Ron, and Hermione search for Voldemort's remaining
+                Horcruxes in their effort to destroy the Dark Lord as the final
+                battle rages on at Hogwarts Success!
+              </p>
+            </td>
+            <td class="table__cell">
+              <img class="table__img" src="img/table-img.jpg" alt="table-img" />
+            </td>
+          </tr>
+
+          <tr class="table__row">
+            <td class="table__cell">
+              <p class="table__desc">
+                Harry Potter and the Deathly Hallows: Part 2
+              </p>
+              <p class="table__subtitle">Genre: Adventure, Family, Fantasy</p>
+            </td>
+            <td class="table__cell сenter">
+              <p class="table__desc">15 Jul 2011</p>
+            </td>
+            <td class="table__cell сenter">
+              <p class="table__desc">United Kingdom, United States</p>
+            </td>
+            <td class="table__cell" width="">
+              <p class="table__desc ellipsis">
+                Harry, Ron, and Hermione search for Voldemort's remaining
+                Horcruxes in their effort to destroy the Dark Lord as the final
+                battle rages on at Hogwarts Success!
+              </p>
+            </td>
+            <td class="table__cell">
+              <img class="table__img" src="img/table-img.jpg" alt="table-img" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>

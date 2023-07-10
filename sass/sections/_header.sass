@@ -1,0 +1,38 @@
+.header
+  padding-top: 24px
+  margin-bottom: 24px
+
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__button
+    color: $c-white
+    font-family: Poppins
+    font-size: 14px
+    font-weight: 600
+    line-height: 20px
+    background-color: $c-blue
+    border-radius: 15px
+    padding: 10px 16px
+    transition: background .3s ease
+
+    &:hover
+      background-color: darken($c-blue, 5%)
+
+  &__title
+    font-family: Poppins
+    font-size: 20px
+    font-weight: 600
+    line-height: 21px
+    color: $c-black-blue
+    margin-bottom: 12px
+    text-transform: uppercase
+
+  &__subtitle
+    font-family: Poppins
+    font-size: 16px
+    font-weight: 500
+    line-height: 21px
+    color: $c-blue
