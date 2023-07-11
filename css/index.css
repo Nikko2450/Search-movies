@@ -202,6 +202,11 @@ tbody .table__cell:last-child {
   -webkit-line-clamp: 3;
   text-overflow: ellipsis;
 }
+.table__img {
+  height: 84px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .search {
   margin-left: auto;
