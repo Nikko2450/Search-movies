@@ -208,6 +208,19 @@ tbody .table__cell:last-child {
      object-fit: cover;
 }
 
+.tui-pagination .tui-page-btn {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  color: #464E5F;
+}
+
+.tui-pagination .tui-is-selected, .tui-pagination strong {
+  color: #FFFFFF;
+  background: #457B9D;
+  border-color: #457B9D;
+}
+
 .search {
   margin-left: auto;
   margin-right: 15px;

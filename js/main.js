@@ -1,11 +1,13 @@
 const apiKey = "e7714302";
-const url = "http://www.omdbapi.com/";
+const url = "https://www.omdbapi.com/";
 const tBody = document.querySelector("tbody");
 const input = document.querySelector(".search__input");
 const button = document.querySelector(".header__button");
 const span = document.querySelector(".header__subtitle span");
 let data = {};
 let errorText = "";
+let inputValue = "";
+let pagination;
 
 const handleFetchMovieById = async (id) => {
   let movieInfo = {};
@@ -63,7 +65,11 @@ const handleCreate = () => {
         </p>
       </td>
       <td class="table__cell">
-        <img class="table__img" src="${movieInfo.Poster}" alt="table-img" />
+        ${
+          movieInfo.Poster === "N/A"
+            ? `<p class="table__desc">${movieInfo.Poster}</p>`
+            : `<img class="table__img" src="${movieInfo.Poster}" alt="${item.Title}" />`
+        }
       </td>
     `;
     row.innerHTML = cells;
@@ -71,8 +77,8 @@ const handleCreate = () => {
   });
 };
 
-const handleFetch = async (search) => {
-  await fetch(`${url}?s=${search}&apikey=${apiKey}`, {
+const handleFetch = async (search, page) => {
+  await fetch(`${url}?s=${search}&apikey=${apiKey}&page=${page}`, {
     method: "GET",
   })
     .then((response) => {
@@ -85,16 +91,36 @@ const handleFetch = async (search) => {
       errorText = error;
     });
 
+  tBody.innerHTML = "";
+
   if (errorText || data.Response === "False") {
     errorText = data.Error;
     handleError();
   } else {
+    handlePagination();
     handleAddTotalResult();
     handleCreate();
   }
 };
 
-button.addEventListener("click", () => {
-  tBody.innerHTML = "";
-  handleFetch(input.value);
+input.addEventListener("input", (event) => {
+  inputValue = event.target.value;
 });
+
+button.addEventListener("click", () => {
+  handleFetch(inputValue, "1");
+});
+
+const handlePagination = () => {
+  if (!pagination) {
+    pagination = new tui.Pagination(document.getElementById("pagination"), {
+      totalItems: data.totalResults,
+      visiblePages: 5,
+      centerAlign: true,
+    });
+  }
+
+  pagination.on("beforeMove", (event) => {
+    handleFetch(inputValue, event.page);
+  });
+};
