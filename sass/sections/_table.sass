@@ -72,14 +72,26 @@
     height: 84px
     object-fit: cover
 
-.tui-pagination .tui-page-btn
-  font-family: Poppins
-  font-size: 14px
-  font-weight: 500
-  color: $c-black
+.tui-pagination 
+  .tui-page-btn
+    font-family: Poppins
+    font-size: 14px
+    font-weight: 500
+    color: $c-black
+    padding: 8px 0 6px
+    height: 28px
+
+    &.tui-next, &.tui-prev, &.tui-last, &.tui-first
+      line-height: 10px
+
+  .tui-ico-ellip
+    margin-top: 10px
 
 .tui-pagination .tui-is-selected, .tui-pagination strong
   color: $c-white
   background: $c-blue
   border-color: $c-blue
+  transition: border-color .3s ease
 
+.tui-pagination .tui-is-selected:hover
+  background-color: darken($c-blue, 5%)

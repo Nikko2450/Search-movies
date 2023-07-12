@@ -213,12 +213,25 @@ tbody .table__cell:last-child {
   font-size: 14px;
   font-weight: 500;
   color: #464E5F;
+  padding: 8px 0 6px;
+  height: 28px;
+}
+.tui-pagination .tui-page-btn.tui-next, .tui-pagination .tui-page-btn.tui-prev, .tui-pagination .tui-page-btn.tui-last, .tui-pagination .tui-page-btn.tui-first {
+  line-height: 10px;
+}
+.tui-pagination .tui-ico-ellip {
+  margin-top: 10px;
 }
 
 .tui-pagination .tui-is-selected, .tui-pagination strong {
   color: #FFFFFF;
   background: #457B9D;
   border-color: #457B9D;
+  transition: border-color 0.3s ease;
+}
+
+.tui-pagination .tui-is-selected:hover {
+  background-color: #3d6d8b;
 }
 
 .search {

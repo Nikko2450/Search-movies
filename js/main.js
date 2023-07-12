@@ -97,7 +97,6 @@ const handleFetch = async (search, page) => {
     errorText = data.Error;
     handleError();
   } else {
-    handlePagination();
     handleAddTotalResult();
     handleCreate();
   }
@@ -107,11 +106,9 @@ input.addEventListener("input", (event) => {
   inputValue = event.target.value;
 });
 
-button.addEventListener("click", () => {
-  handleFetch(inputValue, "1");
-});
+button.addEventListener("click", async () => {
+  await handleFetch(inputValue, "1");
 
-const handlePagination = () => {
   if (!pagination) {
     pagination = new tui.Pagination(document.getElementById("pagination"), {
       totalItems: data.totalResults,
@@ -123,4 +120,4 @@ const handlePagination = () => {
   pagination.on("beforeMove", (event) => {
     handleFetch(inputValue, event.page);
   });
-};
+});
